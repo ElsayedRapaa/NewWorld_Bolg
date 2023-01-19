@@ -13,9 +13,14 @@ function Home({ loading, setLoading }) {
     onSnapshot(queryRef, (snapshot) => {
       setBlogs(snapshot.docs.map((doc) => ({ id: doc.id, blog: doc.data() })));
     });
-    setLoading(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    setLoading(false);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [blogs]);
 
   return (
     <>

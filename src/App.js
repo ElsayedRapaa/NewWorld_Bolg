@@ -27,6 +27,9 @@ function App() {
   const [trending, setTrending] = useState([]);
   const [uTrend, setUTrend] = useState([]);
   const [tagTrend, setTagTrend] = useState([]);
+  const [desArr, setDesArr] = useState([]);
+  const [desText, setDesText] = useState("");
+  const [desID, setDesID] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -127,10 +130,29 @@ function App() {
               element={<Trending tagTrend={tagTrend} />}
             />
             <Route path={`/trending/:trend`} element={<TrendPage />} />
-            <Route path="/profile" element={<Profile user={user} />} />
+            <Route
+              path="/profile"
+              element={
+                <Profile
+                  user={user}
+                  desArr={desArr}
+                  setDesArr={setDesArr}
+                  desText={desText}
+                  setDesText={setDesText}
+                  setDesID={setDesID}
+                />
+              }
+            />
             <Route
               path="/profile/settings"
-              element={<Settings user={user} />}
+              element={
+                <Settings
+                  user={user}
+                  desText={desText}
+                  setDesText={setDesText}
+                  desID={desID}
+                />
+              }
             />
             <Route path="/:id">
               <Route

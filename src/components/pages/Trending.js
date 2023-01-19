@@ -42,7 +42,10 @@ function Trending({ tagTrend }) {
         <div className="sidbar_trend w-64 max-md:w-full h-[93vh] sticky left-0 top-[65px] bg-slate-900 text-white flex flex-col max-lg:w-[200px]">
           {tagTrend.map((tag, index) =>
             trendWidth ? (
-              <button className="tagClick text-left text-white font-semibold cursor-pointer border-b border-slate-800">
+              <button
+                className="tagClick text-left text-white font-semibold cursor-pointer border-b border-slate-800"
+                key={index}
+              >
                 <Link
                   to={`/trending/${tag}`}
                   className="block w-full h-full px-2 py-4"
