@@ -64,9 +64,6 @@ function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [uTrend.length > 0]);
 
-  // console.log(uTrend);
-  // console.log(tagTrend);
-
   const closeSide = () => {
     setShowSide(false);
   };
@@ -131,7 +128,7 @@ function App() {
             />
             <Route path={`/trending/:trend`} element={<TrendPage />} />
             <Route
-              path="/profile"
+              path={`/profile/${user.displayName.split(" ").join("")}`}
               element={
                 <Profile
                   user={user}

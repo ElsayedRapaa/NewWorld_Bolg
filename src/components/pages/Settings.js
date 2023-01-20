@@ -99,7 +99,7 @@ function Settings({ user, desText, setDesText, desID }) {
         });
     }
 
-    navigate("/profile");
+    navigate(`/profile/${user.displayName.split(" ").join("")}`);
   };
 
   return (

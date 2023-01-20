@@ -71,7 +71,7 @@ function ASide({ showSide, setShowSide, user }) {
                 Trending
               </Link>
               <Link
-                to="/profile"
+                to={`/profile/${user.displayName.split(" ").join("")}`}
                 className={`bg-slate-800 px-4 py-2 border-b border-gray-700/75 transition-colors hover:bg-slate-800/50 ${
                   active === "/profile" && "bg-slate-800/50"
                 }`}

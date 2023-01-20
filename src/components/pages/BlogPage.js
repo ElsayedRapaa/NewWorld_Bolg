@@ -1,6 +1,6 @@
 import { deleteDoc, doc, getDoc } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { database } from "../../firebase";
 import { toast } from "react-toastify";
 
@@ -27,6 +27,7 @@ function BlogPage({
     };
 
     id && getBlog();
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
@@ -79,9 +80,9 @@ function BlogPage({
                 className="w-12 h-12 rounded-full object-cover"
               />
             )}
-            <Link to="/profile" className="flex items-center gap-4">
+            <h3 className="flex items-center gap-4">
               <span className="text-xl font-bold">{blog.auther}</span>
-            </Link>
+            </h3>
           </div>
           <div className="blog my-8">
             <h4 className="title text-xl font-semibold">{blog.title}</h4>
