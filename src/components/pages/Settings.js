@@ -56,7 +56,7 @@ function Settings({ user, desText, setDesText, desID }) {
   }, [fileProfile]);
 
   const handleCansle = () => {
-    navigate("/profile");
+    navigate(`/profile/${user.displayName.split(" ").join("")}`);
   };
 
   const handleSave = async () => {
